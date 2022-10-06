@@ -20,7 +20,6 @@ html{
 }
 
 .sidebar{
-    height: calc(100vh - var(--height-controls));
     flex: 0 0 var(--width-sidebar);
     position: relative;
     z-index: 20;
@@ -34,6 +33,7 @@ html{
     padding-top: calc(var(--height-overlay) + 1rem);
     height: calc(100vh - var(--height-controls));
     overflow-y: auto;
+    background-color: rgba(20,25,34,255);
 }
 
 .controls{
@@ -48,6 +48,11 @@ html{
     inset: 0 0 auto 0;
     height: 100px;
     z-index: 10;
+    background-color: rgba(8,11,18,255);
+}
+
+footer{
+    background-color: rgba(40,40,40,255);
 }
 
 .contents nav{
@@ -67,11 +72,16 @@ html{
     margin: 4px 0 4px 0;
 }
 
+
 .sezioni{
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-left: 20px;
+}
+
+.sezioni p{
+    display: inline-block;
 }
 
 .sezioni h4{
@@ -123,9 +133,17 @@ html{
     color: white;
 }
 
+.contents nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(91,95,100,255);
+    margin: 10px 15px 15px 15px;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 552px){
     :root{
-        --width-sidebar: 250px;
+        --width-sidebar: 50px;
     }
 
     .contents{
