@@ -7,7 +7,7 @@
 :root{
     --width-sidebar: 250px;
     --height-overlay: 100px;
-    --height-controls: 100px;
+    --height-controls: 80px;
 }
 
 body{
@@ -33,8 +33,9 @@ html{
     flex: 1 0 0;
     padding-top: calc(var(--height-overlay) + 1rem);
     height: calc(100vh - var(--height-controls));
-    overflow-y: auto;
     background-color: rgba(20,25,34,255);
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -157,6 +158,7 @@ footer{
     width: calc(97vw - var(--width-sidebar));
     color: white;
     margin-top: 10px;
+    padding-right: 20px;
 }
 
 .recently-played > .canzone{
@@ -217,6 +219,122 @@ footer{
     border: 2px solid white;
     border-radius: 30px;
     font-weight: bold;
+}
+
+.contenitore{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.brano{
+    display: flex;
+    flex-basis: 15%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px 20px;
+    margin-left: 15px;
+}
+
+.comandi{
+    flex-basis: 30vw;
+}
+
+.audio{
+    flex-basis: 15%;
+}
+.brano div{
+    flex-basis: 100%;
+}
+
+.brano > div > span{
+    flex-basis: 10%;
+    position: relative;
+    top: 35px;
+    font-weight: bold;
+}
+
+.tipo{
+    color: gray;
+}
+
+.icons{
+    padding-left: 1.5vw;
+    color: gray;
+}
+
+.brano img{
+    width: 50px;
+    height: 50px;
+
+}
+
+.brano .nome, .brano .tipo{
+    flex-basis: 100%;
+}
+
+.comandi{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 0px;
+    font-size: 20px;
+    height: 100px;
+}
+
+.comandi .icone{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.comandi .barra{
+    margin: auto;
+    width: 70%;
+    max-height: 23px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.barra span{
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    margin: 10px;
+}
+
+.comandi progress{
+    display: inline-block;
+    width: 60%;
+    height: 10px;
+    margin: auto;
+}
+
+.comandi > div > .fa-solid{
+    padding-top: 8px;
+}
+
+.fa-circle-play{
+    font-size: 34px;
+}
+
+.audio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.audio progress{
+    display: inline-block;
+    width: 134px;
+    height: 10px;
+    margin: auto;
 }
 
 @media screen and (max-width: 552px){
