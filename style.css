@@ -27,6 +27,14 @@ html{
     color: rgb(135, 132, 132);
 }
 
+.small{
+    display: none;
+}
+
+.fuori{
+    display: none;
+}
+
 .contents{
     display: flex;
     flex-direction: column;
@@ -67,7 +75,7 @@ footer{
     text-align: center;
 }
 
-.sidebar > img{
+.sidebar > img.big{
     width: 70%;
     margin: 15px 50px 15px 15px;
 }
@@ -166,18 +174,20 @@ footer{
 
 .recently-played{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
     width: calc(97vw - var(--width-sidebar));
     color: white;
     margin-top: 10px;
     padding-right: 20px;
+    gap: 20px 5%;
 }
 
 .recently-played > .canzone{
-    flex-basis: 10%;
+    flex-basis: 12%;
     display: flex;
+    height: 315px;
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
@@ -185,7 +195,7 @@ footer{
 }
 
 .canzone img{
-    min-width: 170px;
+    min-width: 95px;
     width: 100%;
 }
 
@@ -206,7 +216,10 @@ footer{
 
 .canzone:hover > .play{
     display: inline;
-    
+}
+
+.canzone:hover > img{
+    opacity: 0.5;
 }
 
 .canzone > span{
@@ -271,21 +284,24 @@ footer{
 
 .brano{
     display: flex;
-    flex-basis: 15%;
+    flex-basis: 150px;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     gap: 0px 20px;
     margin-left: 15px;
 }
 
 .comandi{
     flex-basis: 30vw;
+    margin:auto;
 }
 
 .audio{
     flex-basis: 15%;
 }
+
 .brano div{
     flex-basis: 100%;
 }
@@ -302,7 +318,7 @@ footer{
 }
 
 .icons{
-    padding-left: 1.5vw;
+    padding-left: 0.5vw;
     color: gray;
 }
 
@@ -345,7 +361,7 @@ footer{
 
 .comandi .barra{
     margin: auto;
-    width: 70%;
+    width: 100%;
     max-height: 23px;
     margin-top: 5px;
     text-align: center;
@@ -365,7 +381,7 @@ footer{
 
 .comandi .progress{
     display: inline-block;
-    width: 60%;
+    width: 45%;
     height: 6px;
     margin: 25px auto 0;
     border: none;
@@ -393,9 +409,11 @@ footer{
 
 .audio .progress{
     display: inline-block;
-    width: 134px;
+    min-width: 70px;
+    width: 90%;
     height: 5px;
     margin: auto;
+    margin-right: 10px;
     border: none;
     border-radius: 2px;
     background: linear-gradient(to right , rgba(211,211,211) 0, rgba(211,211,211) 20%, rgba(128,128,128) 20%, rgba(128,128,128) 100%);
@@ -405,7 +423,50 @@ footer{
     background: linear-gradient(to right , #80CD32 0, #80CD32 20%, rgba(128,128,128) 20%, rgba(128,128,128) 100%);
 }
 
+@media screen and (max-width: 878px){
+
+    .recently-played > .canzone{
+        flex-basis: 19%;
+    }
+
+    .canzone img{
+        min-width: 50px;
+        width: 100%;
+    }
+
+    .comandi .icone{
+        gap: 20px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 639px){
+
+    .recently-played > .canzone{
+        flex-basis: 45%;
+    }
+
+    .icons > i{
+        display: block;
+    }
+
+    .canzone img{
+        min-width: 65px;
+        width: 100%;
+    }
+
+    .brano div{
+        width: 50px;
+    }
+
+    .comandi .icone{
+        gap: 15px;
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width: 552px){
+
     :root{
         --width-sidebar: 50px;
     }
@@ -413,4 +474,49 @@ footer{
     .contents{
         left: 200px;
     }
+
+    .sezioni{
+        width: 50px;
+        margin-top: 20px;
+    }
+
+    .sezioni span, .sezioni h4{
+        display: none;
+    }
+
+    .big{
+        display: none;
+    }
+
+    .small{
+        display: inline-block;
+        width: 30px;
+        margin: 15px 0 0 16px;
+    }
+
+    .fuori{
+        display: block;
+        width: 50px;
+        font-size: 20px;
+        color: white;
+    }
+
+    .installa-app{
+        inset: 650px 0 0 0;
+    }
+
+    .installa-app p, .installa-app hr{
+        display: none;
+    }
+    .installa-app .fa-circle-down{
+        position: relative;
+        inset: -45px 0 0 5px;
+    }
+    
+    .installa-app img{
+        position: relative;
+        inset: -30px 0 0 1px;
+        width: 25px;
+    }
+    
 }
